@@ -1,55 +1,55 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import LogoSvgIcon from '../../atoms/LogoSvgIcon';
 import IconGridList from '../../organisms/IconGridList';
 import Footer from '../../organisms/Footer';
 import Header from '../../organisms/Header';
 import NameList from '../../organisms/NameList';
-import styled from '@emotion/styled';
 
 const StyledDiv = styled.div({
   width: '90%',
   height: '100%',
   margin: 'auto',
-  textAlign: 'center'
+  textAlign: 'center',
 });
 
 const overrideHeaderStyle = {
   width: '100%',
   height: '30%',
-  margin: 'auto'
+  margin: 'auto',
 };
 
 const overrideSvgIconStyle = {
   width: 'auto',
-  height: '20%',
-  margin: 'auto'
+  height: '10%',
+  margin: 'auto',
 };
 
 const overrideNameListStyle = {
   width: '100%',
   height: '10%',
   fontSize: '1.5rem',
-  margin: 'auto'
+  margin: 'auto',
 };
 
 const overrideIconGridList = {
   width: '100%',
   height: '30%',
-  margin: 'auto'
+  margin: 'auto',
 };
 
 const overrideFooterStyle = {
   width: '100%',
   height: '10%',
-  margin: 'auto'
+  margin: 'auto',
 };
 
-export type IIndexTemplateProps = {
+export type TIndexTemplateProps = {
   src: string;
   className?: string;
 };
 
-export default function IndexTemplate(props: IIndexTemplateProps) {
+export const IndexTemplate: React.FC<TIndexTemplateProps> = (props) => {
   const { src, className } = props;
   return (
     <StyledDiv className={className}>
@@ -60,4 +60,6 @@ export default function IndexTemplate(props: IIndexTemplateProps) {
       <Footer {...overrideFooterStyle} />
     </StyledDiv>
   );
-}
+};
+
+export default IndexTemplate;

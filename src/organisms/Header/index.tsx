@@ -1,38 +1,40 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import NameDiv from '../../atoms/NameDiv';
 import JPNameDiv from '../../molecules/JPNameDiv';
-import styled from '@emotion/styled';
 
-const StyledDiv = styled.div((props: IHeaderProps) => ({
-  height: props.height,
-  width: props.width,
-  margin: props.margin,
-  display: 'inline-block',
-  textAlign: 'center'
-}));
-
-const overrideNameDivStyle = {
-  fontSize: '3rem',
-  height: '60%'
-};
-
-const overrideJPNameDivStyle = {
-  fontSize: '1.5rem',
-  height: '40%'
-};
-
-export type IHeaderProps = {
+export type THeaderProps = {
   height: string;
   width: string;
   margin: string;
   className?: string;
 };
 
-export default function Header(props: IHeaderProps) {
+const StyledDiv = styled.div((props: THeaderProps) => ({
+  height: props.height,
+  width: props.width,
+  margin: props.margin,
+  display: 'inline-block',
+  textAlign: 'center',
+}));
+
+const overrideNameDivStyle = {
+  fontSize: '2.8rem',
+  height: '60%',
+};
+
+const overrideJPNameDivStyle = {
+  fontSize: '1.5rem',
+  height: '30%',
+};
+
+export const Header: React.FC<THeaderProps> = (props) => {
   return (
     <StyledDiv {...props}>
       <NameDiv name="Portfolio" {...overrideNameDivStyle} />
       <JPNameDiv {...overrideJPNameDivStyle} />
     </StyledDiv>
   );
-}
+};
+
+export default Header;

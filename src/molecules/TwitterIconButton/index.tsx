@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 
 const StyledLink = styled(Link)({
   width: '100%',
-  height: '100%'
+  height: '100%',
 });
 
 const StyledIconButton = styled(IconButton)`
@@ -14,7 +14,7 @@ const StyledIconButton = styled(IconButton)`
   height: 100%;
 `;
 
-export default function TwitterIconButton() {
+export const TwitterIconButton: React.FC = () => {
   return (
     <div>
       <StyledLink href="https://twitter.com/hakut0112">
@@ -24,4 +24,6 @@ export default function TwitterIconButton() {
       </StyledLink>
     </div>
   );
-}
+};
+
+export default TwitterIconButton;

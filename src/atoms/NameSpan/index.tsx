@@ -5,12 +5,15 @@ const StyledSpan = styled.span`
   font-family: 'Dancing Script';
 `;
 
-export type INameSpanProps = {
+export type TNameSpanProps = {
   name: string;
 };
 
-export default function NameSpan(props: INameSpanProps) {
-  return <StyledSpan>{props.name}</StyledSpan>;
-}
+export const NameSpan: React.FC<TNameSpanProps> = (props) => {
+  const { name } = props;
+  return <StyledSpan>{name}</StyledSpan>;
+};
+
+export default NameSpan;
 
 // @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');

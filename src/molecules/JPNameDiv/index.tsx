@@ -1,12 +1,18 @@
 import React from 'react';
 import NameDiv from '../../atoms/NameDiv';
 
-export type IJPNameDivProps = {
+export type ITJPNameDivProps = {
   height: string;
   fontSize: string;
 };
 
-export default function JPNameDiv(props: IJPNameDivProps) {
+export const TJPNameDiv: React.FC<ITJPNameDivProps> = (props) => {
   const { height, fontSize } = props;
-  return <NameDiv name="Hayato Kumazawa" fontSize={fontSize} height={height} />;
-}
+  return (
+    <div>
+      <NameDiv name="Hayato Kumazawa" fontSize={fontSize} height={height} />
+    </div>
+  );
+};
+
+export default TJPNameDiv;

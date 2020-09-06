@@ -1,22 +1,22 @@
 import React from 'react';
-import NameDiv from '../../atoms/NameDiv';
 import Grid from '@material-ui/core/Grid';
 import styled from '@emotion/styled';
+import NameDiv from '../../atoms/NameDiv';
 
 const nameList = ['faluna', 'kaluna', 'Hart'];
 
-export type INameListProps = {
+export type TNameListProps = {
   width: string;
   height: string;
   margin: string;
   className?: string;
 };
 
-const StyledGrid = styled(Grid)((props: INameListProps) => ({
+const StyledGrid = styled(Grid)((props: TNameListProps) => ({
   width: props.width,
   height: props.height,
   margin: props.margin,
-  fontSize: '1.5rem'
+  fontSize: '1.5rem',
 }));
 
 const overrideNameDivStyle = {
@@ -24,10 +24,10 @@ const overrideNameDivStyle = {
   width: 'auto',
   height: 'auto',
   margin: '0',
-  fontFamily: 'Dancing Script'
+  fontFamily: 'Dancing Script',
 };
 
-export default function NameList(props: INameListProps) {
+export const NameList: React.FC<TNameListProps> = (props) => {
   return (
     <StyledGrid container justify="center" spacing={4} {...props}>
       {nameList.map((value, index) => (
@@ -37,4 +37,6 @@ export default function NameList(props: INameListProps) {
       ))}
     </StyledGrid>
   );
-}
+};
+
+export default NameList;

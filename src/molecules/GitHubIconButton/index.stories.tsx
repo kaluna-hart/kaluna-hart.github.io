@@ -1,17 +1,10 @@
 import React from 'react';
-import GitHubIconButton from '../GitHubIconButton';
-import styled from '@emotion/styled';
+import { Meta } from '@storybook/react/types-6-0';
+import { GitHubIconButton, IGitHubIconButtonProps } from '.';
 
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+export const Primary: React.FC<IGitHubIconButtonProps> = () => <GitHubIconButton />;
 
-const StyledGitHubIconButton = styled(GitHubIconButton)`
-  font-size: 40px;
-`;
-
-export const test = storiesOf('Molecules|GitHubIconButton', module);
-test
-  .addDecorator(withKnobs)
-  .addDecorator(withInfo)
-  .add('GitHubIconButton', () => <StyledGitHubIconButton />);
+export default {
+  title: 'molecules/GitHubIconButton',
+  component: GitHubIconButton,
+} as Meta;

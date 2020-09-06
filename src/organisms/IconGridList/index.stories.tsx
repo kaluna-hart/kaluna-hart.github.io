@@ -1,11 +1,13 @@
 import React from 'react';
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
-import IconGridList from '../IconGridList';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { IconGridList, IIconGridListProps } from '.';
 
-export const test = storiesOf('Organisms|IconGridList', module);
-test
-  .addDecorator(withKnobs)
-  .addDecorator(withInfo)
-  .add('TwitterIconButton', () => <IconGridList width="80px" height="auto" margin="auto"/>);
+const Template: Story<IIconGridListProps> = (args) => <IconGridList {...args} />;
+
+export default {
+  title: 'organisms/IconGridList',
+  component: IconGridList,
+} as Meta;
+
+export const Normal = Template.bind({});
+Normal.args = { width: '10px', height: '5px', margin: '0' };

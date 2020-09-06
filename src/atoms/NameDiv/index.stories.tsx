@@ -1,15 +1,13 @@
 import React from 'react';
-import NameDiv from '../NameDiv';
-import styled from '@emotion/styled';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { NameDiv, TNameDivProps } from '.';
 
-import { withInfo } from '@storybook/addon-info';
-import { withKnobs } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
+const Template: Story<TNameDivProps> = (args) => <NameDiv {...args} />;
 
-export const test = storiesOf('Atoms|NameDiv', module);
-test
-  .addDecorator(withKnobs)
-  .addDecorator(withInfo)
-  .add('Name', () => (
-    <NameDiv name="Test Name Div" fontSize="20px" height="auto" />
-  ));
+export default {
+  title: 'atoms/NameDiv',
+  component: NameDiv,
+} as Meta;
+
+export const Test = Template.bind({});
+Test.args = { name: 'Test' };
