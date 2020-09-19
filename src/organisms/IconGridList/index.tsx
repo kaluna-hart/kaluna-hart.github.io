@@ -6,14 +6,14 @@ import TwitterIconButton from '../../molecules/TwitterIconButton';
 import BlogButton from '../../molecules/BlogButton';
 import ProfileButton from '../../molecules/ProfileButton';
 
-export type IIconGridListProps = {
+export type TIconGridListProps = {
   width: string;
   height: string;
   margin: string;
   className?: string;
 };
 
-const StyledGridContainer = styled(Grid)((props: IIconGridListProps) => ({
+const StyledGridContainer = styled(Grid)((props: TIconGridListProps) => ({
   width: props.width,
   height: props.height,
   margin: props.margin,
@@ -25,11 +25,11 @@ const StyledGridItem = styled(Grid)({
   height: '100%',
 });
 
-type IIconList = typeof GitHubIconButton[];
+type TIconList = typeof GitHubIconButton[];
 
-const iconList: IIconList = [GitHubIconButton, ProfileButton, BlogButton, TwitterIconButton];
+const iconList: TIconList = [GitHubIconButton, ProfileButton, BlogButton, TwitterIconButton];
 
-export const IconGridList: React.FC<IIconGridListProps> = (props) => {
+export const IconGridList: React.FC<TIconGridListProps> = (props) => {
   return (
     <StyledGridContainer container justify="center" spacing={1} {...props}>
       {iconList.map((Value, index) => (

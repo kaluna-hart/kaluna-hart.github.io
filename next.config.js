@@ -1,3 +1,4 @@
+const path = require('path');
 const rehypePrism = require('@mapbox/rehype-prism');
 const remarkMath = require('remark-math');
 const rehypeKatex = require('rehype-katex');
@@ -12,18 +13,16 @@ const withMDX = require('@next/mdx')({
 });
 
 module.exports = withMDX({
+  poweredByHeader: false,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack(config, options) {
+    let { _alias } = config.resolve;
+    _alias = {
+      '@svg': path.resolve(__dirname, './public/svg'),
+    };
     config.module.rules.push({
       test: /\.svg$/,
-      use: [
-        {
-          loader: 'babel-loader',
-        },
-        {
-          loader: 'react-svg-loader',
-        },
-      ],
+      use: ['@svgr/webpack'],
     });
     return config;
   },

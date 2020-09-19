@@ -3,6 +3,10 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Text } from 'sancho';
 import styled from '@emotion/styled';
 import { ProfileSection, TProfileSectionProps } from '.';
+import aboutMeData from './data/about-me';
+import currentData from './data/current';
+import historyData from './data/history';
+import skillData from './data/skill';
 
 export default {
   title: 'molecules/ProfileSection',
@@ -34,3 +38,15 @@ export const TextData: TProfileSectionProps = {
 
 export const TextContentSection = Template.bind({});
 TextContentSection.args = TextData;
+
+export const AboutMeSection = Template.bind({});
+AboutMeSection.args = aboutMeData;
+
+export const CurrentSection = Template.bind({});
+CurrentSection.args = currentData;
+
+export const HistorySection = Template.bind({});
+HistorySection.args = historyData;
+
+export const SkillSection = Template.bind({});
+SkillSection.args = skillData;

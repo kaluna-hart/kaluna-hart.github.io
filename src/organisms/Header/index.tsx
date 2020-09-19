@@ -10,7 +10,7 @@ export type THeaderProps = {
   className?: string;
 };
 
-const StyledDiv = styled.div((props: THeaderProps) => ({
+const StyledHeader = styled.header((props: THeaderProps) => ({
   height: props.height,
   width: props.width,
   margin: props.margin,
@@ -30,10 +30,10 @@ const overrideJPNameDivStyle = {
 
 export const Header: React.FC<THeaderProps> = (props) => {
   return (
-    <StyledDiv {...props}>
+    <StyledHeader {...props}>
       <NameDiv name="Portfolio" {...overrideNameDivStyle} />
       <JPNameDiv {...overrideJPNameDivStyle} />
-    </StyledDiv>
+    </StyledHeader>
   );
 };
 

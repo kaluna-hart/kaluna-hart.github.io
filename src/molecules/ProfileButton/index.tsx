@@ -8,14 +8,14 @@ const StyledIconButton = styled(IconButton)`
   height: 100%;
 `;
 
-export const BlogButton: React.FC = () => {
+export const ProfileButton: React.FC = () => {
   return (
     <div>
-      <Link href="/blog">
+      <Link href="/profile">
         <StyledIconButton>Profile</StyledIconButton>
       </Link>
     </div>
   );
 };
 
-export default BlogButton;
+export default ProfileButton;

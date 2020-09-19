@@ -6,7 +6,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0ffff;
+  background-color: #f0ffff;
   border-radius: 50%;
   transition: 0.3s;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);

@@ -12,18 +12,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
           <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism-tomorrow.min.css"
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
           />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Cardo&display=swap"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap"
-          />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" />
         </Head>
         <Global
           styles={css`

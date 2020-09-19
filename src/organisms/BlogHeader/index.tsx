@@ -1,12 +1,13 @@
 import React from 'react';
 import { Text } from 'sancho';
 
-export const ProfileHeader: React.FCX = (props) => (
+export const BlogHeader: React.FCX = (props) => (
   <header {...props}>
     <Text variant="display1" wrap={false}>
-      プロフィール
+      Blog
     </Text>
+    <Text>written by kaluna#8228Hart</Text>
   </header>
 );
 
-export default ProfileHeader;
+export default BlogHeader;
