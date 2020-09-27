@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx, Container } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import LogoIcon from '@svg/logo.svg';
 import IconGridList from '../../organisms/IconGridList';
 import Footer from '../../organisms/Footer';
@@ -18,6 +18,5 @@ export const IndexTemplate: React.FC = () => {
     </React.Fragment>
   );
 };
-// <Container sx={{ width: '100%', textAlign: 'center', maxWidth: ['400px', '600px'], overflow: 'hidden', bg: 'red' }}>
 
 export default IndexTemplate;

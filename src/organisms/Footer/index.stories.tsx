@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Footer, TFooterProps } from '.';
+import { Footer } from '.';
 
-const Template: Story<TFooterProps> = (args) => <Footer {...args} />;
+const Template: Story = (args) => <Footer {...args} />;
 
 export default {
   title: 'organisms/Footer',

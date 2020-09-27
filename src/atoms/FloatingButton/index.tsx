@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx, IconButton, Box } from 'theme-ui';
+import { jsx, Box } from 'theme-ui';
 import Link from 'next/link';
 
 export type TFloatingButtonProps = {

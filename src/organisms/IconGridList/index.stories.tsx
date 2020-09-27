@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { IconGridList, IIconGridListProps } from '.';
+import { IconGridList } from '.';
 
-const Template: Story<IIconGridListProps> = (args) => <IconGridList {...args} />;
+const Template: Story = (args) => <IconGridList {...args} />;
 
 export default {
   title: 'organisms/IconGridList',
