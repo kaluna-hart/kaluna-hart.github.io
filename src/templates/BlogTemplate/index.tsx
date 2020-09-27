@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx } from 'theme-ui';
+import { jsx, Text, Container } from 'theme-ui';
 import BlogHeader from '../../organisms/BlogHeader';
 import PostList from '../../organisms/PostList';
 import FloatingMenu from '../../organisms/FloatingMenu';
@@ -26,6 +26,9 @@ export const BlogTemplate: React.FCX<TBlogTemplateProps> = (props) => {
       <BlogHeader />
       <PostList posts={testPosts} tabCategories={testTabCategories} />
       <FloatingMenu />
+      <Container sx={{ textAlign: 'center', mt: ['40%'] }}>
+        <Text sx={{ fontFamily: 'cursive', fontSize: ['2em', '3em', '4em', '5em'] }}>Coming Soon</Text>
+      </Container>
     </React.Fragment>
   );
 };
