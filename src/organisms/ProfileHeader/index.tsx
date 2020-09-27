@@ -1,11 +1,12 @@
+/** @jsx jsx */
 import React from 'react';
-import { Text } from 'sancho';
+import { jsx, Heading } from 'theme-ui';
 
-export const ProfileHeader: React.FCX = (props) => (
-  <header {...props}>
-    <Text variant="display1" wrap={false}>
-      プロフィール
-    </Text>
+export const ProfileHeader: React.FC = () => (
+  <header sx={{ variant: 'layout.pageHeader' }}>
+    <Heading as="h1" sx={{ fontFamily: 'inherit' }}>
+      Profile
+    </Heading>
   </header>
 );
 

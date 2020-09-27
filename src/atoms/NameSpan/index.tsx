@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
-const StyledSpan = styled.span`
+const StyledSpan = `
   font-family: 'Dancing Script';
 `;
 
@@ -11,7 +10,7 @@ export type TNameSpanProps = {
 
 export const NameSpan: React.FC<TNameSpanProps> = (props) => {
   const { name } = props;
-  return <StyledSpan>{name}</StyledSpan>;
+  return <span>{name}</span>;
 };
 
 export default NameSpan;

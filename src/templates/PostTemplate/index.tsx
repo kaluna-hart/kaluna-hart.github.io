@@ -1,20 +1,26 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import PostHeader from '../../organisms/PostHeader';
-import Article from '../../organisms/Article';
-import FloatingBlogButton from '';
-import { TMeta } from '../../../articles/test.mdx';
+import FloatingMenu from '../../organisms/FloatingMenu';
+
+const StyledFloatingMenu = styled(FloatingMenu)`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+`;
 
 export type TPostTemplateProps = {
-  Content: React.ElementType;
-  meta: TMeta;
+  Article: React.ElementType;
 };
 
-export const PostTemplate: React.FC<TPostTemplateProps> = (props) => {
-  const { Content, meta } = props;
+export const PostTemplate: React.FCX<TPostTemplateProps> = (props) => {
+  const { Article } = props;
   return (
     <React.Fragment>
       <PostHeader />
-      <Article Content={Content} meta={meta} />
+      <Article />
+      <StyledFloatingMenu />
     </React.Fragment>
   );
 };

@@ -5,11 +5,10 @@ import { TMeta } from '../../../articles/test.mdx';
 
 export type TArticleProps = {
   meta: TMeta;
-  Content: React.ElementType;
 };
 
 export const Article: React.FCX<TArticleProps> = (props) => {
-  const { meta, Content, ...others } = props;
+  const { meta, children, ...others } = props;
   return (
     <Layer {...others}>
       <Title
@@ -18,7 +17,7 @@ export const Article: React.FCX<TArticleProps> = (props) => {
         lastUpdated={meta.lastUpdated}
         firstPosted={meta.firstPosted}
       />
-      <Content />
+      {children}
     </Layer>
   );
 };

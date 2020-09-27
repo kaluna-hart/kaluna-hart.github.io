@@ -1,20 +1,15 @@
+/** @jsx jsx */
 import React from 'react';
+import { jsx, Button, Box } from 'theme-ui';
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import IconButton from '@material-ui/core/IconButton';
-
-const StyledIconButton = styled(IconButton)`
-  width: 100%;
-  height: 100%;
-`;
 
 export const ProfileButton: React.FC = () => {
   return (
-    <div>
+    <Box>
       <Link href="/profile">
-        <StyledIconButton>Profile</StyledIconButton>
+        <Button sx={{ width: '100%', height: '100%', fontSize: [4] }}>Profile</Button>
       </Link>
-    </div>
+    </Box>
   );
 };
 

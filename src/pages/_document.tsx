@@ -1,16 +1,16 @@
 import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { Global, css } from '@emotion/core';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import { InitializeColorMode } from 'theme-ui';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const intialProps = await Document.getInitialProps(ctx);
-    return { ...intialProps };
+    return intialProps;
   }
 
   render() {
     return (
-      <Html>
+      <Html lang="ja">
         <Head>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo&display=swap" />
@@ -20,25 +20,10 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <Global
-          styles={css`
-            *,
-            *::before,
-            *::after {
-              -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-            }
-            html,
-            body {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              font-size: 5vmin;
-            }
-          `}
-        />
         <body>
+          <InitializeColorMode />
           <Main />
           <NextScript />
         </body>

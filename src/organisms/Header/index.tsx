@@ -1,39 +1,23 @@
+/** @jsx jsx */
 import React from 'react';
-import styled from '@emotion/styled';
-import NameDiv from '../../atoms/NameDiv';
-import JPNameDiv from '../../molecules/JPNameDiv';
+import { jsx, Heading } from 'theme-ui';
 
-export type THeaderProps = {
-  height: string;
-  width: string;
-  margin: string;
-  className?: string;
-};
-
-const StyledHeader = styled.header((props: THeaderProps) => ({
-  height: props.height,
-  width: props.width,
-  margin: props.margin,
-  display: 'inline-block',
-  textAlign: 'center',
-}));
-
-const overrideNameDivStyle = {
-  fontSize: '2.8rem',
-  height: '60%',
-};
-
-const overrideJPNameDivStyle = {
-  fontSize: '1.5rem',
-  height: '30%',
-};
-
-export const Header: React.FC<THeaderProps> = (props) => {
+export const Header: React.FCX = () => {
   return (
-    <StyledHeader {...props}>
-      <NameDiv name="Portfolio" {...overrideNameDivStyle} />
-      <JPNameDiv {...overrideJPNameDivStyle} />
-    </StyledHeader>
+    <header
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        textAlign: 'center',
+      }}
+    >
+      <Heading as="h1" variant="heading" sx={{ fontSize: [8] }}>
+        Portfolio
+      </Heading>
+      <Heading variant="heading" sx={{ fontSize: [4] }}>
+        Hayato Kumazawa
+      </Heading>
+    </header>
   );
 };
 

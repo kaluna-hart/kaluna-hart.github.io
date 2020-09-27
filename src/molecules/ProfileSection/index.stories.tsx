@@ -1,7 +1,5 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Text } from 'sancho';
-import styled from '@emotion/styled';
 import { ProfileSection, TProfileSectionProps } from '.';
 import aboutMeData from './data/about-me';
 import currentData from './data/current';
@@ -15,19 +13,14 @@ export default {
 } as Meta;
 
 const Template: Story<TProfileSectionProps> = (args) => <ProfileSection {...args} />;
-
-const StyledText = styled(Text)`
-  white-space: pre-wrap;
-`;
-
 const TextContent: React.FCX = () => {
   return (
-    <StyledText variant="paragraph">
+    <div>
       {`
 これはコンテンツがテキストのみの場合のテストです．
 今正しく改行できているでしょうか？
 次は計算式が正しく表示できているでしょうか？15が表示されていれば正しく表示されています．: ${10 + 5}`}
-    </StyledText>
+    </div>
   );
 };
 

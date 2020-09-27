@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
+import { jsx } from 'theme-ui';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import fs from 'fs';
 import path from 'path';
@@ -8,9 +10,8 @@ import PostTemplate from '../../templates/PostTemplate';
 export const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (props) => {
   const { filename } = props;
   const MDXContent = dynamic(() => import(`../../../articles/${filename}`));
-  const MDXMetadata = dynamic(() => import(`../../../articles/${filename}`).then((mod) => mod.metadata));
 
-  return <PostTemplate Content={MDXContent} meta={MDXMetadata} />;
+  return <PostTemplate Article={MDXContent} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -5,10 +5,12 @@ declare module '*.mdx' {
 
   export type TMeta = {
     title: string;
-    categories: string[];
+    primaryCategory: string;
+    categories?: string[];
     lastUpdated?: TDate;
     firstPosted: TDate;
     authors: TAuthor[];
+    description: string;
   };
 
   export type TDate = {

@@ -1,28 +1,18 @@
+/** @jsx jsx */
 import React from 'react';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import Link from '@material-ui/core/Link';
-import IconButton from '@material-ui/core/IconButton';
-import styled from '@emotion/styled';
-
-const StyledLink = styled(Link)({
-  width: '100%',
-  height: '100%',
-});
-
-const StyledIconButton = styled(IconButton)`
-  width: 100%;
-  height: 100%;
-`;
+import { jsx, IconButton, Box, Link } from 'theme-ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export const TwitterIconButton: React.FC = () => {
   return (
-    <div>
-      <StyledLink href="https://twitter.com/hakut0112">
-        <StyledIconButton size="medium">
-          <TwitterIcon style={{ fontSize: '2.5rem' }} />
-        </StyledIconButton>
-      </StyledLink>
-    </div>
+    <Box>
+      <Link href="https://twitter.com/hakut0112">
+        <IconButton sx={{ width: '100%', height: '100%' }}>
+          <FontAwesomeIcon icon={faTwitter} sx={{ fontSize: [6] }} />
+        </IconButton>
+      </Link>
+    </Box>
   );
 };
 

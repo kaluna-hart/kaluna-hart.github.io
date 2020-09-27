@@ -1,27 +1,18 @@
+/** @jsx jsx */
 import React from 'react';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import Link from '@material-ui/core/Link';
-import IconButton from '@material-ui/core/IconButton';
-import styled from '@emotion/styled';
-
-export type IGitHubIconButtonProps = {
-  className?: string;
-};
-
-const StyledIconButton = styled(IconButton)`
-  width: 100%;
-  height: 100%;
-`;
+import { jsx, IconButton, Link, Box } from 'theme-ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export const GitHubIconButton: React.FC = () => {
   return (
-    <div>
+    <Box>
       <Link href="https://github.com/faluna">
-        <StyledIconButton size="medium">
-          <GitHubIcon style={{ fontSize: '2.5rem' }} />
-        </StyledIconButton>
+        <IconButton sx={{ width: '100%', height: '100%' }}>
+          <FontAwesomeIcon icon={faGithub} sx={{ fontSize: [6] }} />
+        </IconButton>
       </Link>
-    </div>
+    </Box>
   );
 };
 

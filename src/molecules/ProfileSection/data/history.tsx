@@ -1,13 +1,7 @@
+/** @jsx jsx */
 import React from 'react';
-import styled from '@emotion/styled';
-import FlexContainer from '../../../atoms/FlexContainer';
-import Container from '../../../atoms/Container';
+import { jsx, Box, Flex, Container } from 'theme-ui';
 import { TProfileSectionProps } from '..';
-
-const FlexGrowItem = styled.div`
-  flex-grow: 2;
-  margin-left: 20px;
-`;
 
 type THistoryItem = {
   date: {
@@ -15,7 +9,7 @@ type THistoryItem = {
     month: number;
   };
   event: string;
-  details: string[];
+  details?: string[];
 };
 
 const historyItems: THistoryItem[] = [
@@ -24,7 +18,7 @@ const historyItems: THistoryItem[] = [
       year: 2020,
       month: 3,
     },
-    event: '新潟大学大学院自然科学研究科電気情報工学専攻 修士課程修了',
+    event: '新潟大学大学院 自然科学研究科 電気情報工学専攻 修士課程修了',
     details: ['2018年度 電子情報通信学会 短距離無線通信(SRW)研究会 優秀学生賞受賞'],
   },
   {
@@ -32,31 +26,33 @@ const historyItems: THistoryItem[] = [
       year: 2018,
       month: 3,
     },
-    event: '新潟大学工学部電気電子工学科卒業',
-    details: [''],
+    event: '新潟大学 工学部 電気電子工学科 卒業',
+  },
+  {
+    date: {
+      year: 2016,
+      month: 3,
+    },
+    event: '群馬工業高等専門学校 電子メディア工学科 卒業',
   },
 ];
 
 const HistoryItem: React.FCX<THistoryItem> = (props) => {
   const { date, event, details } = props;
   return (
-    <FlexContainer>
-      <div>{`${date.year}年${date.month}月`}</div>
-      <FlexGrowItem>
+    <Flex sx={{ overflowX: 'scroll' }}>
+      <div sx={{ whiteSpace: 'nowrap' }}>{`${date.year}年${date.month}月`}</div>
+      <Box sx={{ flexGrow: 2, ml: '20px', whiteSpace: 'nowrap' }}>
         <div>{event}</div>
-        <ul>
-          {details.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </FlexGrowItem>
-    </FlexContainer>
+        <ul>{details && details.map((item) => <li key={item}>{item}</li>)}</ul>
+      </Box>
+    </Flex>
   );
 };
 
 const Content: React.FC = () => {
   return (
-    <Container>
+    <Container sx={{ p: '1em' }}>
       {historyItems.map((item) => (
         <HistoryItem {...item} key={item.event} />
       ))}

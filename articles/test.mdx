@@ -1,3 +1,26 @@
-# :wave: Hello, world!
+import Article from '../src/organisms/Article';
+export const meta: TMeta = {
+  title: 'test',
+  categories: [
+    'rust',
+    'typescript',
+    'nextjs',
+  ],
+  firstPosted: {
+    year: 2020,
+    month: 9,
+    day: 19,
+  },
+  authors: [
+    {
+      firstName: 'Hayato',
+      lastName: 'Kumazawa',
+    },
+  ],
+};
+
+#:wave: Hello, world!
 
 This is MDX!
+
+export default ({ children }) => <Article meta={meta}>{children}</Layout>

@@ -1,6 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
-import { Text } from 'sancho';
-import Section from '../../atoms/Section';
+import { jsx, Heading, Box } from 'theme-ui';
 
 export type TProfileSectionProps = {
   sectionHeader: string;
@@ -10,11 +10,11 @@ export type TProfileSectionProps = {
 export const ProfileSection: React.FCX<TProfileSectionProps> = (props) => {
   const { sectionHeader, sectionContent } = props;
   return (
-    <Section>
-      <Text variant="h1" wrap={false}>
+    <Box sx={{ variant: 'profile.section' }}>
+      <Heading sx={{ fontSize: [3] }} as="h2">
         {sectionHeader}
-      </Text>
+      </Heading>
       {sectionContent}
-    </Section>
+    </Box>
   );
 };

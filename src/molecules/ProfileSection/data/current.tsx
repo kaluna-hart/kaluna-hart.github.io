@@ -1,7 +1,7 @@
+/** @jsx jsx */
 import React from 'react';
-import { Text } from 'sancho';
+import { jsx, Text, Container } from 'theme-ui';
 import { TProfileSectionProps } from '..';
-import Container from '../../../atoms/Container';
 
 const contentHeader = '現在';
 const living = '東京都在住';
@@ -12,9 +12,9 @@ const list: string[] = [living, work, programingLanguage, others];
 
 const Content: React.FCX = () => {
   return (
-    <Container>
+    <Container sx={{ p: '1em', overflowX: 'scroll', fontSize: '1em' }}>
       {list.map((item) => (
-        <Text variant="h3" wrap={false} key={item}>
+        <Text key={item} sx={{ whiteSpace: 'nowrap', fontSize: '1em' }}>
           {item}
         </Text>
       ))}

@@ -1,26 +1,13 @@
+/** @jsx jsx */
 import React from 'react';
-import styled from '@emotion/styled';
-import CopyrightDiv from '../../molecules/CopyrightDiv';
+import { jsx } from 'theme-ui';
+import Copyright from '../../molecules/Copyright';
 
-export type TFooterProps = {
-  width: string;
-  height: string;
-  margin: string;
-  className?: string;
-};
-
-const StyledDiv = styled.div((props: TFooterProps) => ({
-  width: props.width,
-  height: props.height,
-  margin: props.margin,
-  position: 'relative',
-}));
-
-export const Footer: React.FC<TFooterProps> = (props) => {
+export const Footer: React.FC = () => {
   return (
-    <StyledDiv {...props}>
-      <CopyrightDiv />
-    </StyledDiv>
+    <footer>
+      <Copyright />
+    </footer>
   );
 };
 

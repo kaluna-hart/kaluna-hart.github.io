@@ -1,7 +1,7 @@
+/** @jsx jsx */
 import React from 'react';
-import { ReactSVG } from 'react-svg';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import styled from '@emotion/styled';
+import { jsx } from 'theme-ui';
+import LogoSvg from '@svg/logo.svg';
 
 export type TLogoSvgIconProps = {
   src: string;
@@ -21,6 +21,7 @@ const StyledReactSVG = styled(ReactSVG)((props: TLogoSvgIconProps) => ({
 export const LogoSvgIcon: React.FC<TLogoSvgIconProps> = (props) => {
   const { src, className, ...other } = props;
   return (
+    <LogSvg />
     <StyledReactSVG
       src={src}
       fallback={() => <div>Error!</div>}

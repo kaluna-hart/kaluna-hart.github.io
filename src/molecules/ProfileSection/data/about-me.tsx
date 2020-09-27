@@ -1,6 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
-import { Text } from 'sancho';
-import styled from '@emotion/styled';
+import { jsx, Text } from 'theme-ui';
 import { TProfileSectionProps } from '..';
 
 const name = '熊澤 隼斗';
@@ -11,12 +11,19 @@ const introduction = `
 個人活動としては，競技プログラミング，webアプリ制作(新潟のテイクアウト&デリバリー店舗検索アプリ: togoo!)があります．
 `;
 
-const WrapText = styled(Text)`
-  white-space: pre-wrap;
-`;
-
 const Content: React.FCX = () => {
-  return <WrapText>{introduction}</WrapText>;
+  return (
+    <Text
+      sx={{
+        whiteSpace: 'pre-wrap',
+        px: '1em',
+        overflowWrap: 'break-word',
+        wordWrap: 'break-word',
+      }}
+    >
+      {introduction}
+    </Text>
+  );
 };
 
 export const aboutMeData: TProfileSectionProps = {
