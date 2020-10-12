@@ -1,14 +1,21 @@
-export const meta: TMeta = {
+import ArticleLayout, { mainAuthor } from '../src/organisms/ArticleLayout';
+
+export const metadata = {
   title: 'test',
   categories: [
     'rust',
     'typescript',
     'nextjs',
   ],
-  firstPosted: {
+  releaseDate: {
     year: 2020,
     month: 9,
     day: 19,
+  },
+  updateDate: {
+    year: 2020,
+    month: 9,
+    day: 29,
   },
   authors: [
     {
@@ -16,8 +23,11 @@ export const meta: TMeta = {
       lastName: 'Kumazawa',
     },
   ],
+  articleIconName: 'rust.svg',
 };
 
-#:wave: Hello, world!
+## :wave: Hello, world!
 
 This is MDX!
+
+export default ({children, }) => <ArticleLayout metadata={metadata}>{children}</ArticleLayout>;

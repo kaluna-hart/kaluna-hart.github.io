@@ -1,3 +1,5 @@
+import { Theme } from 'theme-ui';
+
 export default {
   colors: {
     text: '#333',
@@ -60,7 +62,7 @@ export default {
       },
     },
   },
-  breakoints: ['40em', '52em', '64em'], // 640px, 832px, 1024px
+  breakpoints: ['40em', '52em', '64em'], // 640px, 832px, 1024px
   layout: {
     skillBox: {
       boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24)',
@@ -70,38 +72,13 @@ export default {
       overflowX: 'scroll',
       zIndex: 3,
     },
-
     pageHeader: {
       textAlign: 'center',
       fontFamily: 'cursive',
       whiteSpace: 'nowrap',
       fontSize: [4, 5, 5, 6],
     },
-  },
-  profile: {
-    section: {
-      display: 'inline-block',
-      textAlign: 'left',
-      position: 'relative',
-      border: 'solid 1px',
-      borderRadius: '15px',
-      mx: 'auto',
-      maxWidth: '100%',
-      minWidth: '100%',
-      fontSize: ['1em', '1.5em'],
-      my: '0.8em',
-      boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.4)',
-      '& h2': {
-        position: 'absolute',
-        top: '-0.7em',
-        left: '0.7em',
-        bg: 'white',
-        borderRadius: '5px',
-        fontSize: ['1em', '1.5em'],
-        boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.1) inset',
-      },
-    },
-    container: {
+    profileContent: {
       textAlign: 'center',
       justifyContent: 'center',
       display: 'flex',
@@ -111,6 +88,64 @@ export default {
       m: 'auto',
     },
   },
-  blog: {},
-};
-// background: '#E1EBF4',
+  styles: {
+    a: {
+      wordBreak: 'break-word',
+    },
+    profile: {
+      section: {
+        display: 'inline-block',
+        textAlign: 'left',
+        position: 'relative',
+        border: 'solid 1px',
+        borderRadius: '15px',
+        mx: 'auto',
+        maxWidth: '100%',
+        minWidth: '100%',
+        fontSize: ['1em', '1.5em'],
+        my: '0.8em',
+        boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.4)',
+        '& h2': {
+          position: 'absolute',
+          top: '-0.7em',
+          left: '0.7em',
+          bg: 'white',
+          borderRadius: '5px',
+          fontSize: ['1em', '1.5em'],
+          boxShadow: '0 5px 20px 0 rgba(0, 0, 0, 0.1) inset',
+        },
+      },
+    },
+    blog: {
+      postList: {
+        mx: 'auto',
+        maxWidth: '100%',
+        minWidth: '100%',
+        fontSize: ['1em', '1.5em'],
+        my: '0.8em',
+      },
+      categoryList: {
+        flexDirection: 'row',
+        overflowX: 'scroll',
+      },
+      categoryBox: {
+        textAlign: 'center',
+        fontSize: 'inherit',
+        border: 'solid thin',
+        minWidth: '6em',
+        flexBasis: '0 0 6em',
+        mx: '0.1em',
+      },
+      articleList: {
+        flexFlow: 'column',
+        overflowY: 'scroll',
+      },
+    },
+  },
+  cards: {
+    article: {
+      display: 'flex',
+      flexFlow: 'row',
+    },
+  },
+} as Theme;

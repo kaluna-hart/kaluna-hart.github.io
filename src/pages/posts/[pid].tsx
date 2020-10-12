@@ -1,6 +1,8 @@
 /** @jsx jsx */
+import React from 'react';
 import { jsx } from 'theme-ui';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
 import dynamic from 'next/dynamic';
@@ -10,7 +12,15 @@ export const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (p
   const { filename } = props;
   const MDXContent = dynamic(() => import(`../../../articles/${filename}`));
 
-  return <PostTemplate Article={MDXContent} />;
+  return (
+    <React.Fragment>
+      <Head>
+        <meta name="robots" content="noindex" />
+        <meta name="robots" content="nofollow" />
+      </Head>
+      <PostTemplate Article={MDXContent} />;
+    </React.Fragment>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -25,8 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const preFilename = params ? params.pid : 'not-pages';
-  const articlesDirectory = path.join(process.cwd(), 'articles');
-  const filename = path.join(articlesDirectory, `${preFilename}.mdx`);
+  const filename = `${preFilename}.mdx`;
 
   return {
     props: {

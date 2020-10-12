@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, Box, Flex, Container } from 'theme-ui';
-import { TProfileSectionProps } from '..';
+import { ProfileSectionProps } from '..';
 
-type THistoryItem = {
+type HistoryItem = {
   date: {
     year: number;
     month: number;
@@ -12,7 +12,7 @@ type THistoryItem = {
   details?: string[];
 };
 
-const historyItems: THistoryItem[] = [
+const historyItems: HistoryItem[] = [
   {
     date: {
       year: 2020,
@@ -37,7 +37,7 @@ const historyItems: THistoryItem[] = [
   },
 ];
 
-const HistoryItem: React.FCX<THistoryItem> = (props) => {
+const HistoryItem: React.FCX<HistoryItem> = (props) => {
   const { date, event, details } = props;
   return (
     <Flex sx={{ overflowX: 'scroll' }}>
@@ -60,7 +60,7 @@ const Content: React.FC = () => {
   );
 };
 
-export const historyData: TProfileSectionProps = {
+export const historyData: ProfileSectionProps = {
   sectionHeader: '経歴',
   sectionContent: <Content />,
 };

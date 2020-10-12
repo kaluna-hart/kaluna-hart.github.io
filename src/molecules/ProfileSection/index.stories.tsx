@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { ProfileSection, TProfileSectionProps } from '.';
+import { ProfileSection, ProfileSectionProps } from '.';
 import aboutMeData from './data/about-me';
 import currentData from './data/current';
 import historyData from './data/history';
@@ -12,7 +12,7 @@ export default {
   excludeStories: /.*Data$/,
 } as Meta;
 
-const Template: Story<TProfileSectionProps> = (args) => <ProfileSection {...args} />;
+const Template: Story<ProfileSectionProps> = (args) => <ProfileSection {...args} />;
 const TextContent: React.FCX = () => {
   return (
     <div>
@@ -24,7 +24,7 @@ const TextContent: React.FCX = () => {
   );
 };
 
-export const TextData: TProfileSectionProps = {
+export const TextData: ProfileSectionProps = {
   sectionHeader: 'コンテンツがテキストの場合',
   sectionContent: <TextContent />,
 };

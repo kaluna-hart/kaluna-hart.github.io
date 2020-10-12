@@ -1,0 +1,28 @@
+import ArticleLayout, { mainAuthor } from '../src/organisms/ArticleLayout';
+
+export const metadata = {
+  title: 'test4',
+  categories: [
+    'rust',
+    'typescript',
+    'nextjs',
+  ],
+  releaseDate: {
+    year: 2020,
+    month: 9,
+    day: 16,
+  },
+  authors: [
+    {
+      firstName: 'Hayato',
+      lastName: 'Kumazawa',
+    },
+  ],
+  articleIconName: 'rust.svg',
+};
+
+#:wave: Hello, world!
+
+This is MDX!
+
+export default ({children, }) => <ArticleLayout metadata={metadata}>{children}</ArticleLayout>;

@@ -1,15 +1,19 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx } from 'theme-ui';
-import FloatingContainer from '../../atoms/FloatingContainer';
+import { jsx, Heading, Container, Text } from 'theme-ui';
+import ArticleList from '../ArticleList';
+import { MetadataSet } from '../../libs/article-loader';
 
-export type TPostListProps = {
-  posts: string[];
-  tabCategories: string[];
+export type PostListProps = {
+  posts: MetadataSet[];
 };
 
-export const PostList: React.FCX<TPostListProps> = () => {
-  return <FloatingContainer />;
-};
+export const PostList: React.FCX<PostListProps> = ({ posts, ...props }) => (
+  <Container variant="styles.blog.postList" {...props}>
+    <Heading sx={{ textAlign: 'center' }}>
+      -----<Text sx={{ display: 'inline', fontWeight: 'bolder' }}>アーカイブ</Text>-----
+    </Heading>
+    <ArticleList posts={posts} />
+  </Container>
+);
 export default PostList;
-// <Link href="/posts/[pid]" as={`/posts/${pid}`} key={}>

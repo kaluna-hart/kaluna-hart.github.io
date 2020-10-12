@@ -6,9 +6,9 @@ import TwitterIconButton from '../../molecules/TwitterIconButton';
 import BlogButton from '../../molecules/BlogButton';
 import ProfileButton from '../../molecules/ProfileButton';
 
-type TIconList = typeof GitHubIconButton[];
+type IconList = typeof GitHubIconButton[];
 
-const iconList: TIconList = [GitHubIconButton, ProfileButton, BlogButton, TwitterIconButton];
+const iconList: IconList = [GitHubIconButton, ProfileButton, BlogButton, TwitterIconButton];
 
 export const IconGridList: React.FC = () => {
   return (

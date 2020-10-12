@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, Text, Container } from 'theme-ui';
-import { TProfileSectionProps } from '..';
+import { ProfileSectionProps } from '..';
 
 const contentHeader = '現在';
 const living = '東京都在住';
@@ -22,7 +22,7 @@ const Content: React.FCX = () => {
   );
 };
 
-export const currentData: TProfileSectionProps = {
+export const currentData: ProfileSectionProps = {
   sectionHeader: contentHeader,
   sectionContent: <Content />,
 };

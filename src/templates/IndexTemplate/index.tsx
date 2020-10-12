@@ -11,9 +11,11 @@ export const IndexTemplate: React.FC = () => {
   return (
     <React.Fragment>
       <Header sx={{ width: '100%', height: '30%', m: 'auto' }} />
-      <LogoIcon sx={{ width: [null, '600px', '700px'], display: 'block', mx: 'auto' }} />
-      <NameList sx={{ height: '10%', m: 'auto' }} />
-      <IconGridList sx={{ height: '30%', m: 'auto', width: '100%' }} />
+      <main>
+        <LogoIcon sx={{ width: [null, '600px', '700px'], display: 'block', mx: 'auto' }} />
+        <NameList sx={{ height: '10%', m: 'auto' }} />
+        <IconGridList sx={{ height: '30%', m: 'auto', width: '100%' }} />
+      </main>
       <Footer sx={{ width: '100%', height: '10%', mx: 'auto' }} />
     </React.Fragment>
   );

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, Text } from 'theme-ui';
-import { TProfileSectionProps } from '..';
+import { ProfileSectionProps } from '..';
 
 const name = '熊澤 隼斗';
 
@@ -26,7 +26,7 @@ const Content: React.FCX = () => {
   );
 };
 
-export const aboutMeData: TProfileSectionProps = {
+export const aboutMeData: ProfileSectionProps = {
   sectionHeader: name,
   sectionContent: <Content />,
 };

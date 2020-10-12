@@ -4,10 +4,11 @@ import { jsx } from 'theme-ui';
 import ProfileHeader from '../../organisms/ProfileHeader';
 import ProfileContent from '../../organisms/ProfileContent';
 import FloatingHomeButton from '../../molecules/FloatingHomeButton';
+import Footer from '../../organisms/Footer';
 
-export type TProfileTemplateProps = React.ComponentProps<typeof ProfileContent>;
+export type ProfileTemplateProps = React.ComponentProps<typeof ProfileContent>;
 
-export const ProfileTemplate: React.FCX<TProfileTemplateProps> = (props) => {
+export const ProfileTemplate: React.FCX<ProfileTemplateProps> = (props) => {
   const { sections } = props;
   return (
     <React.Fragment>
@@ -24,7 +25,10 @@ export const ProfileTemplate: React.FCX<TProfileTemplateProps> = (props) => {
         }}
       />
       <ProfileHeader sx={{ textAlign: 'center', m: 'auto' }} />
-      <ProfileContent sections={sections} />
+      <main>
+        <ProfileContent sections={sections} />
+      </main>
+      <Footer sx={{ width: '100%', height: '10%', mx: 'auto' }} />
     </React.Fragment>
   );
 };

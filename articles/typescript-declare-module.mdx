@@ -1,0 +1,79 @@
+import ArticleLayout, { mainAuthor } from '../src/organisms/ArticleLayout';
+
+export const metadata = {
+  title: 'declare module内のexportでハマった話',
+  categories: [
+    'typescript',
+  ],
+  releaseDate: {
+    year: 2020,
+    month: 10,
+    day: 11,
+  },
+  authors: [
+    mainAuthor,
+  ],
+  articleIconName: 'typescript.svg',
+};
+
+## はじめに
+
+Next.jsでブログを作っています．MDXを使っていますが，mdxファイルからmetadataをimportしようとした際にエラーが出て若干ハマったので，それを記録しておきます．  
+## 起こしたエラー内容
+- \[tsserver 1128\] \[E\] Declaration or statement expected.
+- \[tsserver 2724\] \[E\] Module \'\"\*\.mdx\"\' has no exported member \'metadata\'\.
+
+## 何を間違えたか
+
+わかってしまうとつまらない理由ですが，「ただただexportの書い方がわかっていない，間違っていた」ということです．  
+**自分へ，しっかり調べましょう**  
+  
+具体的には以下のように書くべきところを
+
+```typescript
+declare module '*.mdx' {
+  export const metadata: Metadata; // ただし，Metadataはimport済みあるいは定義済みを想定
+}
+```
+
+次のように書きました．
+
+```typescript
+declare module '*.mdx' {
+  const metadata: Metadata;
+  export metadata;
+}
+```
+
+バカな間違えだと思いますが，実際に間違えたバカなので仕方がない．．．
+
+## なぜこのような間違いをしたか
+
+defalut exportは次のように書いているところをみたので真似して書いたのですが，名前付きexportも同様に書いてエラー出しました．
+
+```typescript
+declare module '*.mdx' {
+  let MDXContent: (props: any) => JSX.Element
+  export default MDXContent
+}
+```
+
+## declare moduleの基本の書き方
+
+まぁ，[ここ](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export)を見れば書いてあります．  
+
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/export
+
+まとめようと思ったのですが，上記に書いてあることまとめようにも全く同じことを書くだけになりそうだったのでやめました．
+
+## おわりに
+いろいろ書き方はあるようですが(上記のリンク参照)，私は以下のように書くことにしました．  
+名前付きエクスポートは`export const name: TypeName;`と「export + \*」と1行で書くようにする．  
+デフォルトエクスポートは
+```typescript
+const name: TypeName;
+export name;
+```
+と書くようにする．
+
+export default ({children, }) => <ArticleLayout metadata={metadata}>{children}</ArticleLayout>;

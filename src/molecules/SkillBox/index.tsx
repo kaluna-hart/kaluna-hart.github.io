@@ -2,12 +2,12 @@
 import React from 'react';
 import { jsx, Text, Container } from 'theme-ui';
 
-export type TSkillBoxProps = {
+export type SkillBoxProps = {
   name: string;
   Icon: React.FCX;
 };
 
-export const SkillBox: React.FCX<TSkillBoxProps> = ({ name, Icon }) => {
+export const SkillBox: React.FCX<SkillBoxProps> = ({ name, Icon }) => {
   return (
     <Container variant="skillBox">
       <Icon sx={{ height: '70%', width: 'auto', maxWidth: '100%', display: 'block', m: 'auto' }} />

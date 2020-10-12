@@ -20,7 +20,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <body>
           <InitializeColorMode />

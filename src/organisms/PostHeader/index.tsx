@@ -3,9 +3,9 @@ import React from 'react';
 import { jsx, Heading } from 'theme-ui';
 
 export const PostHeader: React.FCX = () => (
-  <header sx={{ variant: 'layout.pageHeader' }}>
+  <section sx={{ variant: 'layout.pageHeader' }}>
     <Heading sx={{ fontFamily: 'inherit' }}>Kaluna &bull; Hart</Heading>
-  </header>
+  </section>
 );
 
 export default PostHeader;

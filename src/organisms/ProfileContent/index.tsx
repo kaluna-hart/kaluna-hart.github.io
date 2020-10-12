@@ -1,16 +1,16 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, Container } from 'theme-ui';
-import { ProfileSection, TProfileSectionProps } from '../../molecules/ProfileSection';
+import { ProfileSection, ProfileSectionProps } from '../../molecules/ProfileSection';
 
-export type TProfileContentProps = {
-  sections: TProfileSectionProps[];
+export type ProfileContentProps = {
+  sections: ProfileSectionProps[];
 };
 
-export const ProfileContent: React.FCX<TProfileContentProps> = (props) => {
+export const ProfileContent: React.FCX<ProfileContentProps> = (props) => {
   const { sections } = props;
   return (
-    <Container sx={{ variant: 'profile.container' }}>
+    <Container variant="profileContent">
       {sections.map((section) => (
         <ProfileSection {...section} key={section.sectionHeader} sx={{ my: '5px' }} />
       ))}
