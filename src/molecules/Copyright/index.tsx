@@ -2,9 +2,9 @@
 import React from 'react';
 import { jsx, Text } from 'theme-ui';
 
-export const Copyright: React.FC = () => {
+export const Copyright: React.FCX = (props) => {
   return (
-    <Text variant="footer" sx={{ fontSize: [0], whiteSpace: 'nowrap', textAlign: 'center' }}>
+    <Text variant="footer" sx={{ fontSize: [0], whiteSpace: 'nowrap', textAlign: 'center' }} {...props}>
       Copyright © 2019 Hayato Kumazawa. All rights reserved.
     </Text>
   );

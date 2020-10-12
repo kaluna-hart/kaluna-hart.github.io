@@ -3,9 +3,9 @@ import React from 'react';
 import { jsx } from 'theme-ui';
 import Copyright from '../../molecules/Copyright';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FCX = (props) => {
   return (
-    <footer>
+    <footer {...props}>
       <Copyright />
     </footer>
   );

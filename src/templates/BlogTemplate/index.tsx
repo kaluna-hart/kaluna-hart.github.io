@@ -39,7 +39,7 @@ export const BlogTemplate: React.FCX<BlogTemplateProps> = ({ list, page, total, 
         <PostList
           posts={list}
           sx={{
-            minWidth: ['500px', '600px', '700px'],
+            minWidth: [null, '600px', '700px'],
             maxWidth: ['500px', '700px', '900px'],
             pt: ['2.0em'],
             mb: ['6em', '5em'],
