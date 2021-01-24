@@ -106,3 +106,5 @@ dist
 gh-pages
 gh-pages.pub
 src_copy
+
+.DS_Store

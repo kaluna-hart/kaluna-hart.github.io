@@ -8,7 +8,17 @@ export const GitHubIconButton: React.FC = () => {
   return (
     <Box>
       <Link href="https://github.com/faluna">
-        <IconButton sx={{ width: '100%', height: '100%' }}>
+        <IconButton
+          sx={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            boxShadow: '8px 8px 25px #b3b6b8, -8px -8px 25px #ffffff',
+            '&:hover': {
+              boxShadow: 'none',
+            },
+          }}
+        >
           <FontAwesomeIcon icon={faGithub} sx={{ fontSize: [6] }} />
         </IconButton>
       </Link>
