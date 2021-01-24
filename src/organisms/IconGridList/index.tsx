@@ -14,7 +14,7 @@ export const IconGridList: React.FC = () => {
   return (
     <Flex sx={{ m: 'auto', justifyContent: ['space-between', null, 'space-around'], alignItems: 'stretch', my: '8px' }}>
       {iconList.map((Value, index) => (
-        <Value key={index} />
+        <Value />
       ))}
     </Flex>
   );
