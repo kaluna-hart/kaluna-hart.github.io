@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Box, Flex, Container } from 'theme-ui';
+import { Box, Flex, FlexProps, UnorderedList, ListItem } from '@chakra-ui/react';
 import { ProfileSectionProps } from '..';
 
 type HistoryItem = {
@@ -37,14 +36,13 @@ const historyItems: HistoryItem[] = [
   },
 ];
 
-const HistoryItem: React.FCX<HistoryItem> = (props) => {
-  const { date, event, details } = props;
+const HistoryItem: React.FCX<HistoryItem & FlexProps> = ({ date, event, details, ...props }) => {
   return (
-    <Flex sx={{ overflowX: 'scroll' }}>
-      <div sx={{ whiteSpace: 'nowrap' }}>{`${date.year}年${date.month}月`}</div>
-      <Box sx={{ flexGrow: 2, ml: '20px', whiteSpace: 'nowrap' }}>
-        <div>{event}</div>
-        <ul>{details && details.map((item) => <li key={item}>{item}</li>)}</ul>
+    <Flex overflowX="scroll" {...props}>
+      <Box whiteSpace="nowrap">{`${date.year}年${date.month}月`}</Box>
+      <Box flexGrow={2} ml={['20px']} whiteSpace="nowrap">
+        <Box>{event}</Box>
+        <UnorderedList>{details && details.map((item) => <ListItem key={item}>{item}</ListItem>)}</UnorderedList>
       </Box>
     </Flex>
   );
@@ -52,11 +50,11 @@ const HistoryItem: React.FCX<HistoryItem> = (props) => {
 
 const Content: React.FC = () => {
   return (
-    <Container sx={{ p: '1em' }}>
+    <Box px={['1rem']} pt={['1.5rem']} pb={['0.5rem']}>
       {historyItems.map((item) => (
-        <HistoryItem {...item} key={item.event} />
+        <HistoryItem my={['0.5rem']} {...item} key={item.event} />
       ))}
-    </Container>
+    </Box>
   );
 };
 

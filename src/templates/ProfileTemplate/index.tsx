@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from 'theme-ui';
+import { Box } from '@chakra-ui/react';
 import ProfileHeader from '../../organisms/ProfileHeader';
 import ProfileContent from '../../organisms/ProfileContent';
 import FloatingHomeButton from '../../molecules/FloatingHomeButton';
@@ -8,28 +7,25 @@ import Footer from '../../organisms/Footer';
 
 export type ProfileTemplateProps = React.ComponentProps<typeof ProfileContent>;
 
-export const ProfileTemplate: React.FCX<ProfileTemplateProps> = (props) => {
-  const { sections } = props;
+export const ProfileTemplate: React.FCX<ProfileTemplateProps> = ({ sections, ...props }) => {
   return (
-    <React.Fragment>
+    <Box backgroundImage="linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%)" minH={['100vh']} {...props}>
       <FloatingHomeButton
-        sx={{
-          position: 'fixed',
-          top: ['0.2em', '0em', '0.4em', '0.1em'],
-          right: ['0.5em', '0.3em', '0.4em', '0.6em'],
-          zIndex: 100,
-          width: ['2em'],
-          height: ['2em'],
-          lineHeight: ['2em'],
-          fontSize: ['2.0em', '3em', null, '4em'],
-        }}
+        position="fixed"
+        top={['1rem', null, null, '2rem', '3rem']}
+        right={['1rem', null, null, '2rem', '3rem']}
+        zIndex={100}
+        width={['4rem', '5rem', null, '6rem', '8rem']}
+        height={['4rem', '5rem', null, '6rem', '8rem']}
+        lineHeight={['4rem']}
+        fontSize={['2.0rem', '3rem', null, '4rem', '5rem']}
       />
-      <ProfileHeader sx={{ textAlign: 'center', m: 'auto' }} />
-      <main>
+      <ProfileHeader textAlign="center" m={['auto']} />
+      <Box as="main" my={['2rem']}>
         <ProfileContent sections={sections} />
-      </main>
-      <Footer sx={{ width: '100%', height: '10%', mx: 'auto' }} />
-    </React.Fragment>
+      </Box>
+      <Footer w={['100%']} m={['auto']} />
+    </Box>
   );
 };
 

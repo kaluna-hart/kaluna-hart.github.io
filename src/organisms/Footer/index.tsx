@@ -1,13 +1,12 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from 'theme-ui';
+import { Box, BoxProps } from '@chakra-ui/react';
 import Copyright from '../../molecules/Copyright';
 
-export const Footer: React.FCX = (props) => {
+export const Footer: React.FCX<BoxProps> = ({ ...props }) => {
   return (
-    <footer {...props}>
+    <Box as="footer" {...props}>
       <Copyright />
-    </footer>
+    </Box>
   );
 };
 

@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Text } from 'theme-ui';
+import { Text, TextProps } from '@chakra-ui/react';
 import { ProfileSectionProps } from '..';
 
 const name = '熊澤 隼斗';
@@ -11,16 +10,9 @@ const introduction = `
 個人活動としては，競技プログラミング，webアプリ制作(新潟のテイクアウト&デリバリー店舗検索アプリ: togoo!)があります．
 `;
 
-const Content: React.FCX = () => {
+const Content: React.FC<TextProps> = () => {
   return (
-    <Text
-      sx={{
-        whiteSpace: 'pre-wrap',
-        px: '1em',
-        overflowWrap: 'break-word',
-        wordWrap: 'break-word',
-      }}
-    >
+    <Text whiteSpace={['pre-wrap']} p={['1rem']} overflowWrap={['break-word']} wordBreak={['break-word']}>
       {introduction}
     </Text>
   );

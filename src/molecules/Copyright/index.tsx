@@ -1,14 +1,12 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Text } from 'theme-ui';
+import { Text, TextProps } from '@chakra-ui/react';
 
-export const Copyright: React.FCX = (props) => {
+export const Copyright: React.FC<TextProps> = (props) => {
   return (
-    <Text variant="footer" sx={{ fontSize: [0], whiteSpace: 'nowrap', textAlign: 'center' }} {...props}>
+    <Text fontSize={['0.75rem']} whiteSpace={['nowrap']} textAlign="center" variant="footer" {...props}>
       Copyright © 2019 Hayato Kumazawa. All rights reserved.
     </Text>
   );
 };
 
 export default Copyright;
-// @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');

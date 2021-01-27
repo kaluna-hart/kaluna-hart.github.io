@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Flex } from 'theme-ui';
+import { Flex, FlexProps } from '@chakra-ui/react';
 import NextjsSvg from '@svg/nextjs.svg';
 import RustSvg from '@svg/rust.svg';
 import TypescriptSvg from '@svg/typescript.svg';
@@ -21,12 +20,11 @@ type ContentProps = {
   list: SkillBoxProps[];
 };
 
-const Content: React.FCX<ContentProps> = (props) => {
-  const { list } = props;
+const Content: React.FCX<ContentProps & FlexProps> = ({ list, ...props }) => {
   return (
-    <Flex sx={{ overflowX: 'scroll', pt: ['1.0em', '1.3em'], pb: ['0.5em'], px: ['0.2em', null, null, '0.5em'] }}>
+    <Flex pt={['2rem']} pb="1rem" px={['0.5rem']} justifyContent={['space-around']} {...props}>
       {list.map((box) => (
-        <SkillBox {...box} key={box.name} />
+        <SkillBox {...box} w={['4rem', '6rem', '8rem']} h={['5rem', '6rem', '8rem']} key={box.name} />
       ))}
     </Flex>
   );
