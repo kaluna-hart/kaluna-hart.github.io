@@ -1,23 +1,16 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Heading } from 'theme-ui';
+import { Box, Heading, BoxProps } from '@chakra-ui/react';
 
-export const Header: React.FCX = () => {
+export const Header: React.FCX<BoxProps> = ({ ...props }) => {
   return (
-    <header
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-      }}
-    >
-      <Heading as="h1" variant="heading" sx={{ fontSize: [8] }}>
+    <Box as="header" textAlign="center" {...props}>
+      <Heading as="h1" fontFamily="Cardo" fontSize={['3rem', '4rem']}>
         Portfolio
       </Heading>
-      <Heading variant="heading" sx={{ fontSize: [4] }}>
+      <Heading fontFamily="Cardo" fontSize={['2rem']}>
         Hayato Kumazawa
       </Heading>
-    </header>
+    </Box>
   );
 };
 

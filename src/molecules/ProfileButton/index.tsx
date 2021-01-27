@@ -1,23 +1,19 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Button, Box } from 'theme-ui';
 import Link from 'next/link';
+import { Button, Box, BoxProps } from '@chakra-ui/react';
 
-export const ProfileButton: React.FC = () => {
+export const ProfileButton: React.FC<BoxProps> = ({ ...props }) => {
   return (
-    <Box>
+    <Box {...props}>
       <Link href="/profile">
         <Button
-          sx={{
-            width: '100%',
-            height: '100%',
-            fontSize: [4],
-            borderRadius: '16px',
-            boxShadow: '8px 8px 25px #b3b6b8, -8px -8px 25px #ffffff',
-            '&:hover': {
-              boxShadow: 'none',
-            },
-          }}
+          w={['8rem']}
+          h={['4rem', '5rem']}
+          fontSize={['2rem']}
+          borderRadius={['1rem']}
+          boxShadow="8px 8px 25px #b3b6b8, -8px -8px 25px #ffffff"
+          _hover={{ boxShadow: 'none' }}
+          fontFamily="serif"
         >
           Profile
         </Button>

@@ -1,14 +1,13 @@
-/** @jsx jsx */
-import { jsx, Text } from 'theme-ui';
 import React from 'react';
+import { Text, TextProps } from '@chakra-ui/react';
 
 export type TNameBoxProps = {
   name: string;
 };
 
-export const NameBox: React.FC<TNameBoxProps> = ({ name }) => {
+export const NameBox: React.FC<TNameBoxProps & TextProps> = ({ name, ...props }) => {
   return (
-    <Text variant="codeName" as="div">
+    <Text fontFamily="Dancing Script" fontSize={['1.5rem', null, '2rem', null, '2.5rem']} {...props}>
       {name}
     </Text>
   );

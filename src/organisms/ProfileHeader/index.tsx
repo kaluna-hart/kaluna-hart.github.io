@@ -1,13 +1,12 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx, Heading } from 'theme-ui';
+import { Box, BoxProps, Heading } from '@chakra-ui/react';
 
-export const ProfileHeader: React.FC = () => (
-  <header sx={{ variant: 'layout.pageHeader' }}>
-    <Heading as="h1" sx={{ fontFamily: 'inherit' }}>
+export const ProfileHeader: React.FC<BoxProps> = ({ ...props }) => (
+  <Box as="header" {...props}>
+    <Heading as="h1" fontFamily="Dancing Script" fontSize={['3rem', '4rem']}>
       Profile
     </Heading>
-  </header>
+  </Box>
 );
 
 export default ProfileHeader;

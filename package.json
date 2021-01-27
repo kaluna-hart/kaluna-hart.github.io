@@ -39,8 +39,7 @@
     "rehype-katex": "^4.0.0",
     "remark-emoji": "^2.1.0",
     "remark-images": "^2.0.0",
-    "remark-math": "^3.0.1",
-    "theme-ui": "^0.3.1"
+    "remark-math": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
@@ -64,7 +63,6 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.4",
     "@types/storybook__addon-info": "^5.2.2",
-    "@types/theme-ui": "^0.3.6",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.1.0",
     "babel-loader": "^8.0.6",
@@ -72,7 +70,6 @@
     "babel-plugin-webpack-loaders": "^0.9.0",
     "emotion": "^10.0.23",
     "eslint": "^7.8.0",
-    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-emotion": "^10.0.27",
